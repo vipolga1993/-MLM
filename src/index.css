@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500;1,700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-brand-purple: #8B5CF6;
+  --color-brand-blue: #3B82F6;
+  --color-surface-dark: #09090B;
+  --color-surface-card: #121217;
+}
+
+@layer base {
+  body {
+    @apply bg-surface-dark text-white selection:bg-brand-purple/30 antialiased overflow-x-hidden;
+  }
+}
+
+.glass-card {
+  @apply bg-surface-card border border-white/5 backdrop-blur-xl shadow-2xl;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-purple via-brand-blue to-cyan-400;
+}
+
+.neon-glow {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.btn-primary {
+  @apply relative overflow-hidden bg-gradient-to-r from-brand-purple to-brand-blue text-white font-bold py-4 px-8 rounded-2xl transition-all active:scale-95 shadow-lg shadow-brand-purple/20;
+}
+
+.btn-secondary {
+  @apply bg-white/5 hover:bg-white/10 text-white font-bold py-4 px-8 rounded-2xl transition-all border border-white/10;
+}
+
+.input-field {
+  @apply w-full bg-white/5 border border-white/10 focus:border-brand-purple/50 focus:bg-white/10 rounded-2xl px-6 py-4 outline-none transition-all text-white placeholder:text-white/20;
+}
